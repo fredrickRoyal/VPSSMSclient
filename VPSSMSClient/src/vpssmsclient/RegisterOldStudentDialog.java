@@ -219,7 +219,7 @@ public class RegisterOldStudentDialog extends javax.swing.JDialog {
 private void studentNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentNameActionPerformed
 // TODO add your handling code here:
     try {
-        StudentSearchDialog.searchRequestSource = "OldStudentRegister";
+        StudentSearchDialog.searchRequestSource = "addOldStudentRegister";
         StudentSearchDialog studentSearchDialog = new StudentSearchDialog(VPSSMSClient.mainWindow, true);
         studentSearchDialog.setLocation((int) (VPSSMSClient.width / 10), (int) (VPSSMSClient.height / 10));
         studentSearchDialog.setTitle("Search for Student");
@@ -232,7 +232,7 @@ private void studentNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
 private void studentNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_studentNameKeyReleased
 // TODO add your handling code here:
     try {
-        StudentSearchDialog.searchRequestSource = "OldStudentRegister";
+        StudentSearchDialog.searchRequestSource = "addOldStudentRegister";
         StudentSearchDialog studentSearchDialog = new StudentSearchDialog(VPSSMSClient.mainWindow, true);
         studentSearchDialog.setLocation((int) (VPSSMSClient.width / 10), (int) (VPSSMSClient.height / 10));
         studentSearchDialog.setTitle("Search for Student");

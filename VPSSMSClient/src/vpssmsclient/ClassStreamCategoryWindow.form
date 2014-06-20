@@ -60,7 +60,7 @@
                           <Group type="102" attributes="0">
                               <Component id="addClass" linkSize="1" min="-2" pref="75" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton2" linkSize="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="updateClass" linkSize="1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="deleteClass" linkSize="1" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -76,7 +76,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="addClass" linkSize="2" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jButton2" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateClass" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="deleteClass" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -168,7 +168,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addClassActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="updateClass">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="0"/>
@@ -178,6 +178,9 @@
                   <Color id="Hand Cursor"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateClassActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="deleteClass">
               <Properties>
@@ -213,7 +216,7 @@
                           <Group type="102" attributes="0">
                               <Component id="addStream" linkSize="3" min="-2" pref="75" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton4" linkSize="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="updateStream" linkSize="3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="deleteStream" linkSize="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -229,7 +232,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="addStream" linkSize="4" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jButton4" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateStream" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="deleteStream" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -297,7 +300,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addStreamActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton4">
+            <Component class="javax.swing.JButton" name="updateStream">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="0"/>
@@ -307,6 +310,9 @@
                   <Color id="Hand Cursor"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateStreamActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="deleteStream">
               <Properties>
@@ -343,8 +349,8 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="addCategory" linkSize="5" min="-2" pref="75" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton6" linkSize="5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="updateCategory" linkSize="5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="deleteClassStreamRecord" linkSize="5" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -358,7 +364,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="addCategory" linkSize="6" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jButton6" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateCategory" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="deleteClassStreamRecord" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -469,7 +475,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addCategoryActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton6">
+            <Component class="javax.swing.JButton" name="updateCategory">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="0"/>
@@ -479,6 +485,9 @@
                   <Color id="Hand Cursor"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateCategoryActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="deleteClassStreamRecord">
               <Properties>

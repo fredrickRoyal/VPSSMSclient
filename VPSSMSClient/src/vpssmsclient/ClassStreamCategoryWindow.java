@@ -11,12 +11,19 @@
 package vpssmsclient;
 
 import javax.swing.JOptionPane;
+import vpssmsserver.ClassStream;
+import vpssmsserver.ClassStreamRegister;
+import vpssmsserver.StudentClass;
 
 /**
  *
  * @author Royal
  */
 public class ClassStreamCategoryWindow extends javax.swing.JPanel {
+
+    public static StudentClass studentClass;
+    public static ClassStream classStream;
+    public static ClassStreamRegister classStreamRegister;
 
     /** Creates new form ClassStreamCategoryWindow */
     public ClassStreamCategoryWindow() {
@@ -44,19 +51,19 @@ public class ClassStreamCategoryWindow extends javax.swing.JPanel {
         jScrollPane6 = new javax.swing.JScrollPane();
         classTable = new javax.swing.JTable();
         addClass = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        updateClass = new javax.swing.JButton();
         deleteClass = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         streamTable = new javax.swing.JTable();
         addStream = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        updateStream = new javax.swing.JButton();
         deleteStream = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         classStreamRegisterTable = new javax.swing.JTable();
         addCategory = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        updateCategory = new javax.swing.JButton();
         deleteClassStreamRecord = new javax.swing.JButton();
         logout = new javax.swing.JLabel();
 
@@ -88,9 +95,14 @@ public class ClassStreamCategoryWindow extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jButton2.setText("Edit");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        updateClass.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        updateClass.setText("Edit");
+        updateClass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        updateClass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateClassActionPerformed(evt);
+            }
+        });
 
         deleteClass.setFont(new java.awt.Font("Times New Roman", 0, 14));
         deleteClass.setText("Delete");
@@ -111,14 +123,14 @@ public class ClassStreamCategoryWindow extends javax.swing.JPanel {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(addClass, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(updateClass)
                         .addGap(18, 18, 18)
                         .addComponent(deleteClass))
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 1182, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        jPanel11Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addClass, deleteClass, jButton2});
+        jPanel11Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addClass, deleteClass, updateClass});
 
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,14 +138,14 @@ public class ClassStreamCategoryWindow extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addClass, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2)
+                    .addComponent(updateClass)
                     .addComponent(deleteClass))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel11Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {addClass, deleteClass, jButton2});
+        jPanel11Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {addClass, deleteClass, updateClass});
 
         jTabbedPane3.addTab("Create Class", jPanel11);
 
@@ -173,9 +185,14 @@ public class ClassStreamCategoryWindow extends javax.swing.JPanel {
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jButton4.setText("Edit");
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        updateStream.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        updateStream.setText("Edit");
+        updateStream.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        updateStream.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateStreamActionPerformed(evt);
+            }
+        });
 
         deleteStream.setFont(new java.awt.Font("Times New Roman", 0, 14));
         deleteStream.setText("Delete");
@@ -196,14 +213,14 @@ public class ClassStreamCategoryWindow extends javax.swing.JPanel {
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addComponent(addStream, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
+                        .addComponent(updateStream)
                         .addGap(18, 18, 18)
                         .addComponent(deleteStream))
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1182, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        jPanel12Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addStream, deleteStream, jButton4});
+        jPanel12Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addStream, deleteStream, updateStream});
 
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,14 +228,14 @@ public class ClassStreamCategoryWindow extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addStream, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4)
+                    .addComponent(updateStream)
                     .addComponent(deleteStream))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
                 .addGap(27, 27, 27))
         );
 
-        jPanel12Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {addStream, deleteStream, jButton4});
+        jPanel12Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {addStream, deleteStream, updateStream});
 
         jTabbedPane3.addTab("Create Stream", jPanel12);
 
@@ -259,11 +276,16 @@ public class ClassStreamCategoryWindow extends javax.swing.JPanel {
             }
         });
 
-        jButton6.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jButton6.setText("Edit");
-        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        updateCategory.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        updateCategory.setText("Edit");
+        updateCategory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        updateCategory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateCategoryActionPerformed(evt);
+            }
+        });
 
-        deleteClassStreamRecord.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        deleteClassStreamRecord.setFont(new java.awt.Font("Times New Roman", 0, 14));
         deleteClassStreamRecord.setText("Delete");
         deleteClassStreamRecord.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deleteClassStreamRecord.addActionListener(new java.awt.event.ActionListener() {
@@ -283,13 +305,13 @@ public class ClassStreamCategoryWindow extends javax.swing.JPanel {
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addComponent(addCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6)
-                        .addGap(18, 18, 18)
+                        .addComponent(updateCategory)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(deleteClassStreamRecord)))
                 .addContainerGap())
         );
 
-        jPanel13Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addCategory, deleteClassStreamRecord, jButton6});
+        jPanel13Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addCategory, deleteClassStreamRecord, updateCategory});
 
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,14 +319,14 @@ public class ClassStreamCategoryWindow extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6)
+                    .addComponent(updateCategory)
                     .addComponent(deleteClassStreamRecord))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel13Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {addCategory, deleteClassStreamRecord, jButton6});
+        jPanel13Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {addCategory, deleteClassStreamRecord, updateCategory});
 
         jTabbedPane3.addTab("Assign A Class Streams", jPanel13);
 
@@ -448,7 +470,7 @@ private void deleteClassStreamRecordActionPerformed(java.awt.event.ActionEvent e
             Object id = classStreamRegisterTable.getModel().getValueAt(row, 0);
             if (id.toString().isEmpty()) {
             } else {
-                
+
                 int deleteResponse = JOptionPane.showInternalConfirmDialog(this, "Are You sure Want to DELETE\n the Selected Record?");
                 if (deleteResponse == 0) {
                     boolean deleted = new Controller().deleteRecord(id.toString(), "classstreamregister", "RegisterId");
@@ -465,6 +487,81 @@ private void deleteClassStreamRecordActionPerformed(java.awt.event.ActionEvent e
         System.out.println(ex.getMessage());
     }
 }//GEN-LAST:event_deleteClassStreamRecordActionPerformed
+
+private void updateClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateClassActionPerformed
+// TODO add your handling code here:
+    try {
+        int row = classTable.getSelectedRow();
+        if (row < 0) {
+            JOptionPane.showMessageDialog(null, row + " \nPlease Select Record");
+        } else {
+            studentClass = new StudentClass();
+            studentClass.setClassId(classTable.getModel().getValueAt(row, 0).toString());
+            studentClass.setName(classTable.getModel().getValueAt(row, 1).toString());
+            studentClass.setStatus(classTable.getModel().getValueAt(row, 2).toString());
+            studentClass.setDate(classTable.getModel().getValueAt(row, 3).toString());
+            UpdateClassDialog updateClassDialog = new UpdateClassDialog(null, true);
+            updateClassDialog.setLocation((int) (VPSSMSClient.width / 10), (int) (VPSSMSClient.height / 10));
+            updateClassDialog.setVisible(true);
+        }
+
+
+    } catch (Exception ex) {
+        System.err.println(ex.getMessage() + "\nERROR from updateClassActionPerformed Method");
+
+    }
+}//GEN-LAST:event_updateClassActionPerformed
+
+private void updateStreamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStreamActionPerformed
+// TODO add your handling code here:
+    try {
+        int row = streamTable.getSelectedRow();
+        if (row < 0) {
+            JOptionPane.showMessageDialog(null, row + " \nPlease Select Record");
+        } else {
+            classStream = new ClassStream();
+            classStream.setStreamId(streamTable.getModel().getValueAt(row, 0).toString());
+            classStream.setName(streamTable.getModel().getValueAt(row, 1).toString());
+            classStream.setStatus(streamTable.getModel().getValueAt(row, 2).toString());
+            classStream.setDate(streamTable.getModel().getValueAt(row, 3).toString());
+            UpdateStreamDialog updateStreamDialog = new UpdateStreamDialog(null, true);
+            updateStreamDialog.setLocation((int) (VPSSMSClient.width / 10), (int) (VPSSMSClient.height / 10));
+            updateStreamDialog.setVisible(true);
+        }
+
+
+    } catch (Exception ex) {
+        System.err.println(ex.getMessage() + "\nERROR from updateClassActionPerformed Method");
+
+    }
+}//GEN-LAST:event_updateStreamActionPerformed
+
+private void updateCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateCategoryActionPerformed
+// TODO add your handling code here:
+    try {
+        int row = classStreamRegisterTable.getSelectedRow();
+        if (row < 0) {
+            JOptionPane.showMessageDialog(null, row + " \nPlease Select Record");
+        } else {
+            classStreamRegister = new ClassStreamRegister();
+            classStreamRegister.setRegisterId(classStreamRegisterTable.getModel().getValueAt(row, 0).toString());
+            classStreamRegister.setClassId(classStreamRegisterTable.getModel().getValueAt(row, 1).toString());
+            classStreamRegister.setStreamId(classStreamRegisterTable.getModel().getValueAt(row, 2).toString());
+            classStreamRegister.setTerm(classStreamRegisterTable.getModel().getValueAt(row, 3).toString());
+            classStreamRegister.setYear(classStreamRegisterTable.getModel().getValueAt(row, 4).toString());
+            classStreamRegister.setStatus(classStreamRegisterTable.getModel().getValueAt(row, 5).toString());
+            classStreamRegister.setDate(classStreamRegisterTable.getModel().getValueAt(row, 6).toString());
+            UpdateClassStreamDialog updateClassStreamDialog = new UpdateClassStreamDialog(null, true);
+            updateClassStreamDialog.setLocation((int) (VPSSMSClient.width / 10), (int) (VPSSMSClient.height / 10));
+            updateClassStreamDialog.setVisible(true);
+        }
+
+
+    } catch (Exception ex) {
+        System.err.println(ex.getMessage() + "\nERROR from updateClassActionPerformed Method");
+
+    }
+}//GEN-LAST:event_updateCategoryActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addCategory;
     private javax.swing.JButton addClass;
@@ -474,9 +571,6 @@ private void deleteClassStreamRecordActionPerformed(java.awt.event.ActionEvent e
     private javax.swing.JButton deleteClass;
     private javax.swing.JButton deleteClassStreamRecord;
     private javax.swing.JButton deleteStream;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
@@ -486,5 +580,8 @@ private void deleteClassStreamRecordActionPerformed(java.awt.event.ActionEvent e
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JLabel logout;
     public static javax.swing.JTable streamTable;
+    private javax.swing.JButton updateCategory;
+    private javax.swing.JButton updateClass;
+    private javax.swing.JButton updateStream;
     // End of variables declaration//GEN-END:variables
 }

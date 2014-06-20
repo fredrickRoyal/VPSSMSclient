@@ -11,13 +11,14 @@
 package vpssmsclient;
 
 import javax.swing.JOptionPane;
+import vpssmsserver.StudentRegister;
 
 /**
  *
  * @author Royal
  */
 public class RegisterOldStudentWindow extends javax.swing.JPanel {
-
+public static StudentRegister studentRegister;
     /** Creates new form RegisterOldStudentWindow */
 
     public RegisterOldStudentWindow() {
@@ -43,7 +44,7 @@ public class RegisterOldStudentWindow extends javax.swing.JPanel {
         jScrollPane16 = new javax.swing.JScrollPane();
         registerTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        updateStudent = new javax.swing.JButton();
         deleteStudent = new javax.swing.JButton();
         logout = new javax.swing.JLabel();
 
@@ -83,9 +84,14 @@ public class RegisterOldStudentWindow extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jButton2.setText("Edit");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        updateStudent.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        updateStudent.setText("Edit");
+        updateStudent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        updateStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateStudentActionPerformed(evt);
+            }
+        });
 
         deleteStudent.setFont(new java.awt.Font("Times New Roman", 0, 14));
         deleteStudent.setText("Delete");
@@ -107,13 +113,13 @@ public class RegisterOldStudentWindow extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(updateStudent)
                         .addGap(18, 18, 18)
                         .addComponent(deleteStudent)))
                 .addContainerGap())
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deleteStudent, jButton1, jButton2});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deleteStudent, jButton1, updateStudent});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,14 +127,14 @@ public class RegisterOldStudentWindow extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2)
+                    .addComponent(updateStudent)
                     .addComponent(deleteStudent))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane16, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {deleteStudent, jButton1, jButton2});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {deleteStudent, jButton1, updateStudent});
 
         jTabbedPane1.addTab("Register Student", jPanel1);
 
@@ -205,14 +211,43 @@ private void deleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN
         System.out.println(ex.getMessage());
     }
 }//GEN-LAST:event_deleteStudentActionPerformed
+
+private void updateStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStudentActionPerformed
+// TODO add your handling code here:
+    try {
+        int row = registerTable.getSelectedRow();
+        if (row < 0) {
+            JOptionPane.showMessageDialog(null, row + " \nPlease Select Record");
+        } else {
+            //student = new Student();
+            studentRegister=new StudentRegister();
+            studentRegister.setRegisterId(registerTable.getModel().getValueAt(row, 0).toString());
+            studentRegister.setStudentId(registerTable.getModel().getValueAt(row, 1).toString());
+            studentRegister.setClassId(registerTable.getModel().getValueAt(row, 2).toString());
+            studentRegister.setStreamId(registerTable.getModel().getValueAt(row, 3).toString());
+            studentRegister.setAcademicTerm(registerTable.getModel().getValueAt(row, 4).toString());
+            studentRegister.setAcademicYear(registerTable.getModel().getValueAt(row, 5).toString());
+            studentRegister.setStatus(registerTable.getModel().getValueAt(row, 6).toString());
+            UpdateOldStudentDialog updateOldStudentDialog = new UpdateOldStudentDialog(null, true);
+            updateOldStudentDialog.setLocation((int) (VPSSMSClient.width / 10), (int) (VPSSMSClient.height / 10));
+            updateOldStudentDialog.setVisible(true);
+        }
+
+
+    } catch (Exception ex) {
+        System.err.println(ex.getMessage() + "\nERROR from updateStudentActionPerformed Method");
+
+    }
+}//GEN-LAST:event_updateStudentActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton deleteStudent;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel logout;
     public static javax.swing.JTable registerTable;
+    private javax.swing.JButton updateStudent;
     // End of variables declaration//GEN-END:variables
 }

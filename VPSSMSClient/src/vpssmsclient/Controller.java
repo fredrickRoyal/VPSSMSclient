@@ -14,6 +14,7 @@ import java.rmi.registry.Registry;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.StringTokenizer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import vpssmsserver.*;
@@ -134,6 +135,15 @@ public class Controller {
         return registered;
     }
 
+    public boolean updateSchoolAttended(SchoolAttended school) {
+        try {
+            return remoteObject.updateSchoolAttended(school);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return false;
+    }
+
     public boolean createStudentClass(StudentClass studentClass) {
         boolean created = false;
         try {
@@ -143,6 +153,16 @@ public class Controller {
             System.out.println(ex.getMessage());
         }
         return created;
+    }
+
+    public boolean updateStudentClass(StudentClass studentClass) {
+        try {
+            return remoteObject.updateStudentClass(studentClass);
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return false;
     }
 
     public boolean createClassStream(ClassStream stream) {
@@ -156,6 +176,16 @@ public class Controller {
         return created;
     }
 
+    public boolean updateClassStream(ClassStream stream) {
+        try {
+            return remoteObject.updateClassStream(stream);
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return false;
+    }
+
     public boolean registerClassStream(ClassStreamRegister register) {
         boolean registered = false;
         try {
@@ -167,6 +197,16 @@ public class Controller {
         return registered;
     }
 
+    public boolean updateClassStreamRegister(ClassStreamRegister register) {
+        try {
+            return remoteObject.updateClassStreamRegister(register);
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return false;
+    }
+
     public boolean registerOldStudent(StudentRegister register) {
         boolean registered = false;
         try {
@@ -176,6 +216,16 @@ public class Controller {
             System.out.println(ex.getMessage());
         }
         return registered;
+    }
+
+    public boolean updateOldStudent(StudentRegister register) {
+        try {
+            return remoteObject.updateOldStudent(register);
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return false;
     }
 
     public boolean createSubject(Subject subject) {
@@ -1182,6 +1232,16 @@ public class Controller {
             System.out.println(ex.getMessage() + "ERROR from InitializeSettings");
 
         }
+
+    }
+
+    public ArrayList<String> stringExtractor(String message, String separater) {
+        ArrayList<String> list = new ArrayList<String>();
+        StringTokenizer tokenizer = new StringTokenizer(message, separater);
+        while (tokenizer.hasMoreTokens()) {
+            list.add(tokenizer.nextToken());
+        }
+        return list;
 
     }
 }

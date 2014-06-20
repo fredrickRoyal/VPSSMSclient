@@ -58,32 +58,32 @@ public class AddSchoolAttendedDialog extends javax.swing.JDialog {
         setTitle("Add School Attended");
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14));
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 102, 255));
         jLabel1.setText("Student");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14));
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 102, 255));
         jLabel2.setText("School Name");
 
         schoolName.setFont(new java.awt.Font("Times New Roman", 1, 18));
         schoolName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14));
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 102, 255));
         jLabel3.setText("Duration");
 
         UOM.setFont(new java.awt.Font("Times New Roman", 0, 18));
         UOM.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Terms", "Years" }));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14));
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 102, 255));
         jLabel4.setText("Qualification Attained");
 
         qualification.setFont(new java.awt.Font("Times New Roman", 1, 18));
         qualification.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14));
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 102, 255));
         jLabel5.setText("Reason For Change");
 
@@ -110,7 +110,7 @@ public class AddSchoolAttendedDialog extends javax.swing.JDialog {
         duration.setFont(new java.awt.Font("Times New Roman", 1, 18));
         duration.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", " " }));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14));
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 102, 255));
         jLabel6.setText("Status");
 
@@ -157,7 +157,7 @@ public class AddSchoolAttendedDialog extends javax.swing.JDialog {
                         .addComponent(UOM, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(studentName, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
                     .addComponent(reason))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(studentPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -215,7 +215,7 @@ public class AddSchoolAttendedDialog extends javax.swing.JDialog {
 private void studentNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentNameActionPerformed
 // TODO add your handling code here:
     try {
-        StudentSearchDialog.searchRequestSource = "attendedSchool";
+        StudentSearchDialog.searchRequestSource = "addAttendedSchool";
         StudentSearchDialog studentSearchDialog = new StudentSearchDialog(VPSSMSClient.mainWindow, true);
         studentSearchDialog.setLocation((int) (VPSSMSClient.width / 10), (int) (VPSSMSClient.height / 10));
         studentSearchDialog.setTitle("Search for Student");
@@ -233,7 +233,7 @@ private void studentNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:ev
 // TODO add your handling code here:
     if (studentName.getText().length() == 1) {
         try {
-            StudentSearchDialog.searchRequestSource = "attendedSchool";
+            StudentSearchDialog.searchRequestSource = "addAttendedSchool";
             StudentSearchDialog studentSearchDialog = new StudentSearchDialog(VPSSMSClient.mainWindow, true);
             studentSearchDialog.setLocation((int) (VPSSMSClient.width / 10), (int) (VPSSMSClient.height / 10));
             studentSearchDialog.setTitle("Search for Student");

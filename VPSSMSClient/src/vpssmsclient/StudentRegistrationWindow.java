@@ -13,6 +13,7 @@ package vpssmsclient;
 import javax.swing.JOptionPane;
 import vpssmsserver.Guardian;
 import vpssmsserver.Parent;
+import vpssmsserver.SchoolAttended;
 import vpssmsserver.Student;
 
 /**
@@ -24,6 +25,7 @@ public class StudentRegistrationWindow extends javax.swing.JPanel {
     public static Student student;
     public static Parent parent;
     public static Guardian guardian;
+    public static SchoolAttended schoolAttended;
 
     /** Creates new form StudentRegistrationWindow */
     public StudentRegistrationWindow() {
@@ -72,7 +74,7 @@ public class StudentRegistrationWindow extends javax.swing.JPanel {
         jScrollPane5 = new javax.swing.JScrollPane();
         schoolAttendedTable = new javax.swing.JTable();
         addSchoolAttended = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        updateSchoolAttended = new javax.swing.JButton();
         deleteSchool = new javax.swing.JButton();
         logout = new javax.swing.JLabel();
 
@@ -361,8 +363,13 @@ public class StudentRegistrationWindow extends javax.swing.JPanel {
             }
         });
 
-        jButton8.setText("Edit");
-        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        updateSchoolAttended.setText("Edit");
+        updateSchoolAttended.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        updateSchoolAttended.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateSchoolAttendedActionPerformed(evt);
+            }
+        });
 
         deleteSchool.setText("Delete");
         deleteSchool.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -385,13 +392,13 @@ public class StudentRegistrationWindow extends javax.swing.JPanel {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(addSchoolAttended)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8)
+                        .addComponent(updateSchoolAttended)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(deleteSchool)))
                 .addContainerGap())
         );
 
-        jPanel6Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addSchoolAttended, deleteSchool, jButton8});
+        jPanel6Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addSchoolAttended, deleteSchool, updateSchoolAttended});
 
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -399,13 +406,13 @@ public class StudentRegistrationWindow extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addSchoolAttended, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8)
+                    .addComponent(updateSchoolAttended)
                     .addComponent(deleteSchool))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE))
         );
 
-        jPanel6Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {addSchoolAttended, deleteSchool, jButton8});
+        jPanel6Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {addSchoolAttended, deleteSchool, updateSchoolAttended});
 
         jTabbedPane2.addTab("Schools Attended", jPanel6);
 
@@ -696,6 +703,32 @@ private void editGuardianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         System.out.println(ex.getMessage() + "\nERROR from editGuardianActionPerformed Method");
     }
 }//GEN-LAST:event_editGuardianActionPerformed
+
+private void updateSchoolAttendedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSchoolAttendedActionPerformed
+// TODO add your handling code here:
+    try{
+        int row = schoolAttendedTable.getSelectedRow();
+        if (row < 0) {
+            JOptionPane.showMessageDialog(null, row + " \nPlease Select Record");
+        } else {
+            schoolAttended = new SchoolAttended();
+            schoolAttended.setSchoolId(schoolAttendedTable.getModel().getValueAt(row, 0).toString());
+            schoolAttended.setStudentId(schoolAttendedTable.getModel().getValueAt(row, 1).toString());
+            schoolAttended.setName(schoolAttendedTable.getModel().getValueAt(row, 2).toString());
+            schoolAttended.setUOM(schoolAttendedTable.getModel().getValueAt(row, 3).toString());
+            schoolAttended.setQualification(schoolAttendedTable.getModel().getValueAt(row, 4).toString());
+            schoolAttended.setReasonForChange(schoolAttendedTable.getModel().getValueAt(row, 5).toString());
+            schoolAttended.setStatus(schoolAttendedTable.getModel().getValueAt(row, 6).toString());
+            UpdateSchoolAttendedDialog updateSchoolAttendedDialog = new UpdateSchoolAttendedDialog(null, true);
+            updateSchoolAttendedDialog.setLocation((int) (VPSSMSClient.width / 10), (int) (VPSSMSClient.height / 10));
+            updateSchoolAttendedDialog.setVisible(true);
+        }
+        
+    }catch(Exception ex){
+        System.out.println(ex.getMessage()+"\n ERROR from updateSchoolAttendedActionPerformed");
+    }
+}//GEN-LAST:event_updateSchoolAttendedActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addGuadian;
     private javax.swing.JButton addParent;
@@ -707,7 +740,6 @@ private void editGuardianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private javax.swing.JButton deleteStudent;
     private javax.swing.JButton editGuardian;
     public static javax.swing.JTable guardianTable;
-    private javax.swing.JButton jButton8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -724,6 +756,7 @@ private void editGuardianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     public static javax.swing.JTable schoolAttendedTable;
     public static javax.swing.JTable studentTable;
     private javax.swing.JButton updateParent;
+    private javax.swing.JButton updateSchoolAttended;
     private javax.swing.JButton updateStrudent;
     // End of variables declaration//GEN-END:variables
 }

@@ -60,7 +60,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jButton1" linkSize="1" min="-2" pref="74" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton2" linkSize="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="updateStudent" linkSize="1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="deleteStudent" linkSize="1" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -75,7 +75,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButton1" linkSize="2" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                          <Component id="jButton2" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateStudent" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="deleteStudent" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -185,7 +185,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="updateStudent">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="0"/>
@@ -195,6 +195,9 @@
                   <Color id="Hand Cursor"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateStudentActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="deleteStudent">
               <Properties>

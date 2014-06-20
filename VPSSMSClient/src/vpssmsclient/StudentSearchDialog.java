@@ -294,7 +294,7 @@ private void studentSearchTableMouseClicked(java.awt.event.MouseEvent evt) {//GE
 
                 } else {
                 }
-            } else if (searchRequestSource.equalsIgnoreCase("attendedSchool")) {
+            } else if (searchRequestSource.equalsIgnoreCase("addAttendedSchool")) {
                 if (student != null) {
                     AddSchoolAttendedDialog.student = student;
                     AddSchoolAttendedDialog.studentName.setText(student.getFirstName().toUpperCase() + " " + student.getOtherName() + " " + student.getLastName());
@@ -305,7 +305,18 @@ private void studentSearchTableMouseClicked(java.awt.event.MouseEvent evt) {//GE
 
                 } else {
                 }
-            } else if (searchRequestSource.equalsIgnoreCase("OldStudentRegister")) {
+            } else if (searchRequestSource.equalsIgnoreCase("updateAttendedSchool")) {
+                if (student != null) {
+                    UpdateSchoolAttendedDialog.studentId = student.getStudentId();
+                    UpdateSchoolAttendedDialog.studentName.setText(student.getFirstName().toUpperCase() + " " + student.getOtherName() + " " + student.getLastName());
+                    Image img = Toolkit.getDefaultToolkit().createImage(student.getImageData());
+                    ImageIcon icon = new ImageIcon(((new ImageIcon(img)).getImage()).getScaledInstance(129, 135, java.awt.Image.SCALE_SMOOTH));
+                    UpdateSchoolAttendedDialog.studentPhoto.setText(null);
+                    UpdateSchoolAttendedDialog.studentPhoto.setIcon(icon);
+
+                } else {
+                }
+            } else if (searchRequestSource.equalsIgnoreCase("addOldStudentRegister")) {
                 if (student != null) {
                     RegisterOldStudentDialog.student = student;
                     RegisterOldStudentDialog.studentName.setText(student.getFirstName().toUpperCase() + " " + student.getOtherName() + " " + student.getLastName());
@@ -313,6 +324,18 @@ private void studentSearchTableMouseClicked(java.awt.event.MouseEvent evt) {//GE
                     ImageIcon icon = new ImageIcon(((new ImageIcon(img)).getImage()).getScaledInstance(129, 135, java.awt.Image.SCALE_SMOOTH));
                     RegisterOldStudentDialog.studentPhoto.setText(null);
                     RegisterOldStudentDialog.studentPhoto.setIcon(icon);
+
+                } else {
+                }
+
+            } else if (searchRequestSource.equalsIgnoreCase("updateOldStudentRegister")) {
+                if (student != null) {
+                    UpdateOldStudentDialog.studentId = student.getStudentId();
+                    UpdateOldStudentDialog.studentName.setText(student.getFirstName().toUpperCase() + " " + student.getOtherName() + " " + student.getLastName());
+                    Image img = Toolkit.getDefaultToolkit().createImage(student.getImageData());
+                    ImageIcon icon = new ImageIcon(((new ImageIcon(img)).getImage()).getScaledInstance(129, 135, java.awt.Image.SCALE_SMOOTH));
+                    UpdateOldStudentDialog.studentPhoto.setText(null);
+                    UpdateOldStudentDialog.studentPhoto.setIcon(icon);
 
                 } else {
                 }

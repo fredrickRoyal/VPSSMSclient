@@ -326,7 +326,7 @@ private void studentNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:ev
 private void searchStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchStudentActionPerformed
 // TODO add your handling code here:
     try {
-        StudentSearchDialog.searchRequestSource = "Guardian";
+        StudentSearchDialog.searchRequestSource = "updateGuardian";
         StudentSearchDialog studentSearchDialog = new StudentSearchDialog(VPSSMSClient.mainWindow, true);
         studentSearchDialog.setLocation((int) (VPSSMSClient.width / 10), (int) (VPSSMSClient.height / 10));
         studentSearchDialog.setTitle("Search for Student");

@@ -99,9 +99,9 @@ public class AddClassStreamDialog extends javax.swing.JDialog {
         jLabel5.setForeground(new java.awt.Color(51, 102, 255));
         jLabel5.setText("Stream");
 
-        streamName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        streamName.setFont(new java.awt.Font("Times New Roman", 1, 18));
 
-        className.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        className.setFont(new java.awt.Font("Times New Roman", 1, 24));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14));
         jLabel6.setForeground(new java.awt.Color(51, 102, 255));
@@ -115,7 +115,6 @@ public class AddClassStreamDialog extends javax.swing.JDialog {
         jLabel7.setText("Academic Year");
 
         academicYear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        academicYear.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,7 +144,7 @@ public class AddClassStreamDialog extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(131, 131, 131)))
-                .addGap(242, 242, 242))
+                .addGap(179, 179, 179))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
